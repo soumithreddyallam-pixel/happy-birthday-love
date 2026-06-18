@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love ❤</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #e6e0ff, #d8ccff, #cbb7ff);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(255,192,203,0.25), transparent 60%);
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 30px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: 80px 10%;
+      animation: slideUp 1.5s ease;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* LOVE LETTER */
+    .letter {
+      background: rgba(255,255,255,0.08);
+      padding: 40px;
+      border-radius: 20px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* MEMORIES */
+    .memories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .memory {
+      background: rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .memory:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
+
+    .memory h3 {
+      margin-bottom: 10px;
+      color: #ffb6c1;
+    }
+
+    /* FINAL MESSAGE */
+    .final {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .final h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .final p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: pulse 1.5s infinite;
+      color: #ff5e78;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* FLOATING HEARTS */
+    .hearts span {
+      position: fixed;
+      bottom: -50px;
+      font-size: 20px;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+  /* MUSIC CONTROL */
+    .music-btn{
+      position:fixed;top:20px;right:20px;z-index:1000;
+      background:rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.3);
+      padding:10px 16px;border-radius:30px;
+      color:#fff;cursor:pointer;
+      backdrop-filter:blur(10px);
+    }
+    .music-btn:hover{background:rgba(255,255,255,0.25)}
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+  <div class="music-btn" onclick="toggleMusic()">🎵 Play Music</div>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    const btn = document.querySelector('.music-btn');
+    function toggleMusic(){
+      if(music.paused){music.play();btn.innerText='⏸ Pause Music';}
+      else{music.pause();btn.innerText='🎵 Play Music';}
+    }
+  </script>
+
+  <!-- FLOATING LOVE NOTES -->
+  <div class="hearts">
+    <span style="left:10%; animation-delay:0s">💌</span>
+    <span style="left:25%; animation-delay:2s">💗</span>
+    <span style="left:40%; animation-delay:4s">🌸</span>
+    <span style="left:60%; animation-delay:6s">💜</span>
+    <span style="left:75%; animation-delay:8s">💞</span>
+    <span style="left:90%; animation-delay:10s">💍</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>Happy Birthday, My Love 💕</h1>
+      <p>You are my favorite story, my safest place, my forever.</p>
+      <div class="scroll">Scroll to feel the magic ✨</div>
+    </div>
+  </div>
+
+  <!-- LOVE TIMER -->
+  <section>
+    <h2 class="section-title">⏳ Us, In Time</h2>
+    <div class="letter" style="text-align:center;font-size:1.2rem">
+      <div id="timer"></div>
+    </div>
+  </section>
+
+  <script>
+    const startDate = new Date('2025-06-03T00:00:00'); // change if needed
+    function updateTimer(){
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor(diff / (1000*60*60));
+      const minutes = Math.floor(diff / (1000*60));
+      const seconds = Math.floor(diff / 1000);
+      document.getElementById('timer').innerHTML = `💜 ${days} days<br>💗 ${hours} hours<br>💞 ${minutes} minutes<br>💍 ${seconds} seconds of us`; 
+    }
+    setInterval(updateTimer,1000);
+    updateTimer();
+  </script>
+
+  <!-- LETTER -->
+  <section>
+    <h2 class="section-title">A Letter From ur love🥰</h2>
+    <div class="letter">
+      My Kuchupuchu❤️,
+      <br><br>
+      This is the special day that I am waiting for, I just want you to know how deeply loved you are. You walked into my life quietly, but you changed everything forever, u made me happy, u made me feel blessed, u made me to feel safe , u made me How to be like a REAL MAN🫠 Your smile heals me 😊, your voice calms me, your presence feels like home, your eyes I look the whole universe in them🪐, But ahead of all these u know what i like more in u , simply thats ur CHARACTER i really fell for that, The way u love me,the way u take care of me,the way u see me,everthing matters to me.You are such a great human and a strong and bold Women,I am very proud of you.u said that i won't be with u ateast for ten days, now i will say in ur words its been 258 days 6,191 hours, 3,71,503 minutes, 22,290,180 seconds and I say this "I WILL BE WITH U LIKE THIS HOLDING UR HAND IN MINE GRABBING UR WAIST PULLING U TO ME, MAKING LOVE LIKE NO ONE ELSE CAN DO IT"
+      <br><br>
+      Happy Birthday, my Beautiful🥰, pretty😍, cute🎀, bubbly🤩, girl.
+    </div>
+  </section>
+
+  <!-- MOVIE MONTAGE -->
+  <section>
+    <h2 class="section-title">Our Movie ✨</h2>
+    <div class="montage">
+      <div class="frame"><img src="photo1.jpg" alt="memory1"><div class="caption">🎬 Scene 1<br>✨ THE DAY WE MET ✨<br>😊💫</div></div>
+      <div class="frame"><img src="photo2.jpg" alt="memory2"><div class="caption">💍 Scene 2<br>💞 YOU MY CUTO 💞<br>🌸❤️</div></div>
+      <div class="frame"><img src="photo3.jpg" alt="memory3"><div class="caption">🧸 Scene 3<br>❤️ US BEING US ❤️<br>🧿🎀</div></div>
+    </div>
+  </section>
+
+  <style>
+    .montage {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 20px 0;
+    }
+
+    .frame {
+      min-width: 280px;
+      height: 380px;
+      background: linear-gradient(135deg, rgba(230,224,255,0.6), rgba(255,255,255,0.15));
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      text-align: center;
+      scroll-snap-align: center;
+      box-shadow: 0 0 40px rgba(203, 183, 255, 0.9);
+      animation: zoomIn 1.5s ease;
+    }
+
+    .frame span {
+      font-size: 1rem;
+      margin-top: 15px;
+      font-family: 'Poppins', sans-serif;
+      opacity: 0.9;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .frame img{
+      width:100%;height:100%;object-fit:cover;
+      position:absolute;top:0;left:0;
+      clip-path: path('M140 40 C140 0 0 0 0 90 C0 180 140 260 140 260 C140 260 280 180 280 90 C280 0 140 0 140 40 Z');
+      filter:brightness(0.8);
+    } 
+    .frame{position:relative;overflow:hidden}
+    .caption{
+      position:absolute;bottom:20px;left:0;right:0;
+      text-align:center;background:rgba(0,0,0,0.4);
+      padding:15px;border-radius:0 0 25px 25px;
+      font-size:1.1rem;
+    }
+  </style> 
+
+<!-- FINAL -->
+  <section class="final">
+    <div style="margin-bottom:60px;font-size:2.4rem;font-family:'Playfair Display',serif;opacity:0.9">🎬 To Be Continued… ♾️<br><span style="font-size:1.2rem;font-family:'Poppins'">Forever with You 💍💜</span></div>
+    <h2>Once Again, Happy Birthday 🎂</h2>
+    <p>I love you more than words can ever explain.</p>
+    <button onclick="document.getElementById('proposal').style.display='block'" style="padding:14px 30px;border:none;border-radius:30px;font-size:1.1rem;background:#d8ccff;color:#2c5364;cursor:pointer">💍 Click Me</button>
+    <div id="proposal" style="display:none;margin-top:40px;font-size:1.4rem;font-family:'Playfair Display',serif">Will you be mine, forever and always? 💜♾️</div>
+  </section>
+
+</body>
+</html>
